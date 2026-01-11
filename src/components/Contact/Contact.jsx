@@ -13,7 +13,7 @@ const Contact = () => {
   const [contentRef, contentVisible] = useIntersectionObserver();
 
   // Replace this URL with your actual Google Form link
-  const googleFormUrl = "https://forms.gle/https://docs.google.com/forms/d/e/1FAIpQLSfcRxiN9bcvyqirGtrV7tjmhtdeePgp4mzCZbacEWKz6AO8jA/viewform?usp=dialog";
+  const googleFormUrl = "https://forms.gle/vi2BqAGxwVo9PCgS8";
 
   const socialLinks = [
     {
