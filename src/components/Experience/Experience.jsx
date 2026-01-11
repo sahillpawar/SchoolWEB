@@ -38,6 +38,7 @@ const Experience = () => {
                 src={`${import.meta.env.BASE_URL}Image1.jpeg`}
                 alt="The Keystone Ankuram School Collaboration"
                 className={styles.experienceImage}
+                loading="lazy"
               />
             </div>
 

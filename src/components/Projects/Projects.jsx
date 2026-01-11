@@ -6,7 +6,7 @@ import styles from "./Projects.module.css";
 const Projects = () => {
   const [titleRef, titleVisible] = useIntersectionObserver();
   const [containerRef, containerVisible] = useIntersectionObserver();
-  const [beginnerImageIndex, setBeginnerImageIndex] = useState(0);
+  const [imageIndices, setImageIndices] = useState({});
 
   const projectKits = [
     {
@@ -14,7 +14,10 @@ const Projects = () => {
       title: "Beginner Robotics Kit",
       description: "Intro to coding and mechanical assembly",
       tags: ["Beginner", "Robotics", "Coding", "Assembly"],
-      images: [`${import.meta.env.BASE_URL}level11.jpeg`, `${import.meta.env.BASE_URL}level1.jpeg`],
+      images: [
+        `${import.meta.env.BASE_URL}level11.jpeg`,
+        `${import.meta.env.BASE_URL}level1.jpeg`,
+      ],
       hasSlider: true,
     },
     {
@@ -53,7 +56,9 @@ const Projects = () => {
                     <div
                       className={styles.sliderContainer}
                       style={{
-                        transform: `translateX(-${beginnerImageIndex * 100}%)`,
+                        transform: `translateX(-${
+                          (imageIndices[kit.id] || 0) * 100
+                        }%)`,
                       }}
                     >
                       {kit.images.map((img, imgIndex) => (
@@ -61,6 +66,7 @@ const Projects = () => {
                           <img
                             src={img}
                             alt={`${kit.title} - Image ${imgIndex + 1}`}
+                            loading="lazy"
                           />
                         </div>
                       ))}
@@ -69,9 +75,13 @@ const Projects = () => {
                       className={styles.sliderButtonPrev}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setBeginnerImageIndex((prev) =>
-                          prev === 0 ? kit.images.length - 1 : prev - 1
-                        );
+                        setImageIndices((prev) => ({
+                          ...prev,
+                          [kit.id]:
+                            (prev[kit.id] || 0) === 0
+                              ? kit.images.length - 1
+                              : (prev[kit.id] || 0) - 1,
+                        }));
                       }}
                       aria-label="Previous image"
                     >
@@ -81,9 +91,13 @@ const Projects = () => {
                       className={styles.sliderButtonNext}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setBeginnerImageIndex((prev) =>
-                          prev === kit.images.length - 1 ? 0 : prev + 1
-                        );
+                        setImageIndices((prev) => ({
+                          ...prev,
+                          [kit.id]:
+                            (prev[kit.id] || 0) === kit.images.length - 1
+                              ? 0
+                              : (prev[kit.id] || 0) + 1,
+                        }));
                       }}
                       aria-label="Next image"
                     >
@@ -94,11 +108,16 @@ const Projects = () => {
                         <button
                           key={imgIndex}
                           className={`${styles.indicator} ${
-                            beginnerImageIndex === imgIndex ? styles.active : ""
+                            (imageIndices[kit.id] || 0) === imgIndex
+                              ? styles.active
+                              : ""
                           }`}
                           onClick={(e) => {
                             e.stopPropagation();
-                            setBeginnerImageIndex(imgIndex);
+                            setImageIndices((prev) => ({
+                              ...prev,
+                              [kit.id]: imgIndex,
+                            }));
                           }}
                           aria-label={`Go to image ${imgIndex + 1}`}
                         />
@@ -110,6 +129,7 @@ const Projects = () => {
                     <img
                       src={kit.images ? kit.images[0] : ""}
                       alt={kit.title}
+                      loading="lazy"
                     />
                   </div>
                 )}

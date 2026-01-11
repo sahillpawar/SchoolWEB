@@ -242,15 +242,61 @@
   color: var(--accent-primary);
 }
 
+/* ===================== TABLET ===================== */
+
+@media (max-width: 968px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+  
+  .projectCard {
+    max-width: 500px;
+  }
+}
+
 /* ===================== MOBILE ===================== */
 
 @media (max-width: 768px) {
+  .projects {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
   .projectsGrid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
   }
 
   .singleImage,
   .imageSlider {
+    height: 220px;
+  }
+  
+  .projectTitle {
+    font-size: 1.3rem;
+  }
+  
+  .projectDescription {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .singleImage,
+  .imageSlider {
     height: 200px;
+  }
+  
+  .projectContent {
+    padding: var(--spacing-sm);
+  }
+  
+  .projectTitle {
+    font-size: 1.2rem;
   }
 }

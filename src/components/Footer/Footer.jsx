@@ -11,9 +11,7 @@ const Footer = () => {
     { name: 'Partnerships', href: '#partnerships' },
   ]
 
-  const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com/sahillpawar', label: 'GitHub' },
-  ]
+  const socialLinks = []
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href)
@@ -32,20 +30,6 @@ const Footer = () => {
             <p className={styles.brandTagline}>
               Educating and Motivating Young Minds.
             </p>
-            <div className={styles.socialLinks}>
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialLink}
-                  aria-label={social.label}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Links */}

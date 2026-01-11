@@ -6,7 +6,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,18 +98,39 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .home {
+    background-attachment: scroll;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+  
   .home-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin-bottom: 15px;
   }
   .home-content p {
     font-size: 1rem;
+    margin-bottom: 25px;
   }
   .home-buttons {
     flex-direction: column;
     align-items: stretch;
+    gap: 15px;
   }
   .btn {
     width: 100%;
     text-align: center;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 1.75rem;
+  }
+  .home-content p {
+    font-size: 0.9rem;
   }
 }

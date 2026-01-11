@@ -281,13 +281,32 @@
   z-index: -1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .experienceCard {
     grid-template-columns: 1fr;
   }
+  
+  .imageContainer {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  .experienceCard {
+    grid-template-columns: 1fr;
+    margin-bottom: var(--spacing-md);
+  }
 
   .imageContainer {
-    height: 300px;
+    height: 280px;
+  }
+  
+  .experienceImage {
+    object-fit: cover;
   }
 
   .textContent {
@@ -295,18 +314,47 @@
   }
 
   .cardTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .schoolInfo {
     padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+  
+  .infoItem {
+    font-size: 0.9rem;
   }
 
   .videoTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .videoContainer {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageContainer {
+    height: 250px;
+  }
+  
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .videoTitle {
+    font-size: 1.2rem;
   }
 }
