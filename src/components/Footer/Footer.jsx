@@ -65,7 +65,7 @@ const Footer = () => {
                 +91 70306 25979
               </p>
               <p className={styles.location}>
-                T-13/502, Raheja Vistas Premier, NIBM Annex, Pune-411060
+                Pune, Maharashtra 411060
               </p>
             </div>
           </div>
@@ -75,9 +75,6 @@ const Footer = () => {
         <div className={styles.footerBottom}>
           <p className={styles.copyright}>
             © {currentYear} TechieMindz. All rights reserved.
-          </p>
-          <p className={styles.madeWith}>
-            - Sahil Pawar
           </p>
         </div>
       </div>
