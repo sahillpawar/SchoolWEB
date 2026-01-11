@@ -1,0 +1,135 @@
+.programs {
+  background: var(--bg-primary);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titleAccent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.programCard {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: var(--spacing-md);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-normal);
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.programCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.programCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--card-color);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.programIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition-normal);
+}
+
+.programCard:hover .programIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.programTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.programDescription {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
+}
+
+.highlightsSection {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.highlightsTitle {
+  color: var(--accent-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.programFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.programFeatures li {
+  padding: var(--spacing-xs) 0;
+  color: var(--text-secondary);
+  padding-left: var(--spacing-md);
+  position: relative;
+  line-height: 1.6;
+}
+
+.programFeatures li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--card-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .programsGrid {
+    grid-template-columns: 1fr;
+  }
+}

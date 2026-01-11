@@ -1,0 +1,216 @@
+.learning {
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #0d0d0d 100%);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-top: 2px solid rgba(255, 215, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.learning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  color: #ffffff;
+}
+
+.sectionTitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titleAccent {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.sampleProjectsText {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  opacity: 0.5;
+  margin-top: -1rem;
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+.levelsContainer {
+  margin-top: var(--spacing-lg);
+}
+
+.levelGroup {
+  margin-bottom: var(--spacing-xl);
+}
+
+.levelGroupTitle {
+  text-align: center;
+  color: var(--accent-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.8rem;
+}
+
+.learningGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.learningCard {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 20px;
+  padding: var(--spacing-md);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.1);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(50px);
+  position: relative;
+  overflow: hidden;
+}
+
+.learningCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-normal);
+}
+
+.learningCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.learningCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--card-color);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.learningCard:hover::before {
+  transform: scaleX(1);
+}
+
+.levelNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  transition: var(--transition-normal);
+  color: var(--card-color);
+}
+
+.learningCard:hover .levelNumber {
+  transform: scale(1.1);
+}
+
+.cardTitle {
+  color: #ffffff;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+.cardDescription {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+}
+
+.topicsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.topicTag {
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--accent-primary);
+  transition: var(--transition-fast);
+}
+
+.learningCard:hover .topicTag {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: var(--card-color);
+  color: var(--card-color);
+}
+
+.learnButton {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background: transparent;
+  border: 2px solid var(--card-color);
+  border-radius: 50px;
+  color: var(--card-color);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-top: auto;
+}
+
+.learnButton:hover {
+  background: var(--card-color);
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.buttonIcon {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .learningGrid {
+    grid-template-columns: 1fr;
+  }
+}
