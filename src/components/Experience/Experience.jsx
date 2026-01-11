@@ -33,9 +33,9 @@ const Experience = () => {
         >
           <div className={styles.experienceCard}>
             <div className={styles.imageContainer}>
-              {/* Image from public folder - use root-relative path */}
+              {/* Image from public folder - use base URL for GitHub Pages compatibility */}
               <img
-                src="/Image1.jpeg"
+                src={`${import.meta.env.BASE_URL}Image1.jpeg`}
                 alt="The Keystone Ankuram School Collaboration"
                 className={styles.experienceImage}
               />
@@ -117,10 +117,10 @@ const Experience = () => {
             </h3>
 
             <div className={styles.videoContainer}>
-              {/* Video from public folder - use root-relative path */}
+              {/* Video from public folder - use base URL for GitHub Pages compatibility */}
               <video
                 className={styles.video}
-                src="/video1.mp4"
+                src={`${import.meta.env.BASE_URL}video1.mp4`}
                 controls
                 muted
                 playsInline
