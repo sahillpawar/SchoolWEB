@@ -3,7 +3,7 @@ import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  FaGithub,
+  FaInstagram,
   FaExternalLinkAlt,
 } from "react-icons/fa";
 import styles from "./Contact.module.css";
@@ -17,9 +17,9 @@ const Contact = () => {
 
   const socialLinks = [
     {
-      icon: <FaGithub />,
-      url: "https://github.com/TechieMindz",
-      label: "GitHub",
+      icon: <FaInstagram/>,
+      url: "https://www.instagram.com/techiemindz?igsh=djlvb3JoNDIzaTU1",
+      label: "Instagram",
     },
   ];
 
