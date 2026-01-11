@@ -93,7 +93,7 @@ const Footer = () => {
             © {currentYear} TechieMindz. All rights reserved.
           </p>
           <p className={styles.madeWith}>
-            Made with <FaHeart className={styles.heartIcon} /> by Sahil Pawar
+            - Sahil Pawar
           </p>
         </div>
       </div>

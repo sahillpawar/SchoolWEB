@@ -56,9 +56,7 @@ const Contact = () => {
           Get In <span className={styles.titleAccent}>Touch</span>
         </h2>
 
-        <p className={styles.sectionSubtitle}>
-          Have a question or want to collaborate? We'd love to hear from you!
-        </p>
+        
 
         <div className={styles.contactContent}>
           {/* Contact Info */}

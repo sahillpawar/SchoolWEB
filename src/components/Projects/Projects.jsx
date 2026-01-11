@@ -14,7 +14,7 @@ const Projects = () => {
       title: "Beginner Robotics Kit",
       description: "Intro to coding and mechanical assembly",
       tags: ["Beginner", "Robotics", "Coding", "Assembly"],
-      images: ["/level11.jpeg", "/level1.jpeg"],
+      images: ["./public/level11.jpeg", "./public/level1.jpeg"],
       hasSlider: true,
     },
     {
