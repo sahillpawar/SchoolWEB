@@ -36,13 +36,7 @@ const Contact = () => {
     },
   ];
 
-  const socialLinks = [
-    {
-      icon: <FaGithub />,
-      url: "https://github.com/sahillpawar",
-      label: "GitHub",
-    },
-  ];
+  
 
   return (
     <section id="contact" className={styles.contact}>
