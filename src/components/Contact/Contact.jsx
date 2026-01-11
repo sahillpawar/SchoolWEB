@@ -15,6 +15,14 @@ const Contact = () => {
   // Replace this URL with your actual Google Form link
   const googleFormUrl = "https://forms.gle/YOUR_GOOGLE_FORM_ID";
 
+  const socialLinks = [
+    {
+      icon: <FaGithub />,
+      url: "https://github.com/TechieMindz",
+      label: "GitHub",
+    },
+  ];
+
   const contactInfo = [
     {
       icon: <FaEnvelope />,
@@ -36,8 +44,6 @@ const Contact = () => {
     },
   ];
 
-  
-
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.container}>
@@ -49,8 +55,6 @@ const Contact = () => {
         >
           Get In <span className={styles.titleAccent}>Touch</span>
         </h2>
-
-        
 
         <div className={styles.contactContent}>
           {/* Contact Info */}
