@@ -7,8 +7,10 @@ import {
   FaPlay,
 } from "react-icons/fa";
 import styles from "./Experience.module.css";
-import Image1 from "/SchoolWEB/public/Image1.jpeg";
-import video1 from "/SchoolWEB/public/video1.mp4";
+// Note: Do NOT import files from public. Use root-relative URLs instead.
+// import Image1 from "/SchoolWEB/public/Image1.jpeg";
+// import video1 from "/SchoolWEB/public/video1.mp4";
+
 const Experience = () => {
   const [titleRef, titleVisible] = useIntersectionObserver();
   const [contentRef, contentVisible] = useIntersectionObserver();
@@ -34,8 +36,9 @@ const Experience = () => {
         >
           <div className={styles.experienceCard}>
             <div className={styles.imageContainer}>
+              {/* public/Image1.jpeg is served from site root as /Image1.jpeg */}
               <img
-                src={Image1}
+                src="public/Image1.jpeg"
                 alt="The Keystone Ankuram School Collaboration"
                 className={styles.experienceImage}
               />
@@ -117,9 +120,10 @@ const Experience = () => {
             </h3>
 
             <div className={styles.videoContainer}>
+              {/* public/video1.mp4 is served from site root as /video1.mp4 */}
               <video
                 className={styles.video}
-                src={video1}
+                src="public/video1.mp4"
                 controls
                 muted
                 playsInline
