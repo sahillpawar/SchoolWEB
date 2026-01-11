@@ -40,7 +40,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
-/* ===================== GRID FIX ===================== */
+/* ===================== GRID ===================== */
 
 .projectsGrid {
   display: grid;
@@ -66,6 +66,8 @@
   transform: translateY(50px);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  will-change: transform, opacity;
 }
 
 .projectCard.visible {
@@ -82,23 +84,26 @@
 
 /* ===================== IMAGES ===================== */
 
-.projectImages {
-  position: relative;
+.projectImages,
+.singleImage,
+.imageSlider {
   width: 100%;
+  max-width: 100%;
+  position: relative;
   overflow: hidden;
   background: var(--bg-secondary);
 }
 
 .singleImage {
-  width: 100%;
   height: 250px;
-  overflow: hidden;
 }
 
 .singleImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
   transition: var(--transition-slow);
 }
 
@@ -109,10 +114,7 @@
 /* ===================== SLIDER ===================== */
 
 .imageSlider {
-  position: relative;
-  width: 100%;
   height: 250px;
-  overflow: hidden;
 }
 
 .sliderContainer {
@@ -133,6 +135,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* ===================== SLIDER BUTTONS ===================== */
@@ -174,6 +178,8 @@
   transform: translateY(-50%) scale(1.05);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* ===================== INDICATORS ===================== */
 
 .sliderIndicators {
   position: absolute;
@@ -249,7 +255,7 @@
     grid-template-columns: 1fr;
     max-width: 600px;
   }
-  
+
   .projectCard {
     max-width: 500px;
   }
@@ -261,22 +267,21 @@
   .projects {
     padding: var(--spacing-md) var(--spacing-sm);
   }
-  
+
   .projectsGrid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
   }
 
   .singleImage,
   .imageSlider {
     height: 220px;
   }
-  
+
   .projectTitle {
     font-size: 1.3rem;
   }
-  
+
   .projectDescription {
     font-size: 0.95rem;
   }
@@ -286,16 +291,16 @@
   .sectionTitle {
     font-size: 1.8rem;
   }
-  
+
   .singleImage,
   .imageSlider {
-    height: 200px;
+    height: 180px;
   }
-  
+
   .projectContent {
     padding: var(--spacing-sm);
   }
-  
+
   .projectTitle {
     font-size: 1.2rem;
   }
