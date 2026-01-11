@@ -14,7 +14,7 @@ const Projects = () => {
       title: "Beginner Robotics Kit",
       description: "Intro to coding and mechanical assembly",
       tags: ["Beginner", "Robotics", "Coding", "Assembly"],
-      images: ["./public/level11.jpeg", "./public/level1.jpeg"],
+      images: ["/level11.jpeg", "/level1.jpeg"],
       hasSlider: true,
     },
     {
@@ -22,7 +22,7 @@ const Projects = () => {
       title: "Advanced Electronics Kit",
       description: "Deep dive into microcontrollers & sensors",
       tags: ["Advanced", "Electronics", "Microcontrollers", "Sensors"],
-      images: ["./public/level2.jpeg"],
+      images: ["/level2.jpeg"],
     },
   ];
 
