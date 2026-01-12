@@ -37,7 +37,7 @@ const Header = () => {
         {/* LOGO */}
         <div className={styles.logo} onClick={() => scrollToSection("home")}>
           <img
-            src="./public/logo.svg"
+            src="/logo.png"
             alt="TechieMindz Logo"
             className={styles.logoImage}
           />
