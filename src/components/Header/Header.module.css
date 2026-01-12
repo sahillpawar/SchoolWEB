@@ -112,6 +112,11 @@
   cursor: pointer;
 }
 
+.caret {
+  font-size: 0.75rem;
+  transform: translateY(1px);
+}
+
 .dropdownMenu {
   position: absolute;
   top: 110%;

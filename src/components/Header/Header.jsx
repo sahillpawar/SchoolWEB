@@ -53,7 +53,7 @@ const Header = () => {
         {/* LOGO */}
         <div className={styles.logo} onClick={() => scrollToSection("home")}>
           <img
-            src="/logo.jpeg"
+            src={`${import.meta.env.BASE_URL}logo.jpeg`}
             alt="TechieMindz Logo"
             className={styles.logoImage}
           />
@@ -82,28 +82,23 @@ const Header = () => {
             </a>
           ))}
 
-          <div
-            className={styles.dropdown}
-            ref={dropdownRef}
-            onMouseEnter={() => setIsCollabOpen(true)}
-            onMouseLeave={() => setIsCollabOpen(false)}
-            onFocus={() => setIsCollabOpen(true)}
-            onBlur={() => setIsCollabOpen(false)}
-          >
+          <div className={styles.dropdown} ref={dropdownRef}>
             <button
               type="button"
               className={`${styles.navLink} ${styles.dropdownTrigger}`}
               aria-haspopup="true"
               aria-expanded={isCollabOpen}
-              aria-controls="collab-menu"
+              onClick={() => setIsCollabOpen((prev) => !prev)}
             >
               Collaboration
+              <span className={styles.caret} aria-hidden="true">
+                ▾
+              </span>
             </button>
             <div
               className={`${styles.dropdownMenu} ${
                 isCollabOpen ? styles.dropdownOpen : ""
               }`}
-              id="collab-menu"
               role="menu"
             >
               <button
@@ -121,6 +116,14 @@ const Header = () => {
                 role="menuitem"
               >
                 Our Collab in Action
+              </button>
+              <button
+                type="button"
+                className={styles.dropdownItem}
+                onClick={() => handleCollabSelect("testimonials")}
+                role="menuitem"
+              >
+                Testimonials
               </button>
             </div>
           </div>
