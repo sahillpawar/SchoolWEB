@@ -124,26 +124,7 @@ const Experience = () => {
               testimonialVisible ? styles.visible : ""
             }`}
           >
-            <div className={styles.testimonialContent}>
-              <h3 className={styles.testimonialTitle}>
-                <FaFilePdf className={styles.testimonialIcon} />
-                Keystone Ankuram Testimonial
-              </h3>
-
-              <p className={styles.testimonialText}>
-                Official testimonial document from The Keystone Ankuram School
-                highlighting the success and impact of our collaboration.
-              </p>
-
-              <a
-                href={`${import.meta.env.BASE_URL}keystone-ankuram-testimonial.pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.testimonialButton}
-              >
-                View Testimonial Document
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
