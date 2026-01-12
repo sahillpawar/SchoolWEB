@@ -36,11 +36,12 @@ const Header = () => {
       <div className={styles.container}>
         {/* LOGO */}
         <div className={styles.logo} onClick={() => scrollToSection("home")}>
-          <img
-            src="/logo.png"
-            alt="TechieMindz Logo"
-            className={styles.logoImage}
-          />
+        <img
+  src={`${import.meta.env.BASE_URL}logo.svg`}
+  alt="TechieMindz Logo"
+  className={styles.logoImage}
+/>
+
 
           <span className={styles.logoText}>
             <span className={styles.logoTextYellow}>Techie</span>
