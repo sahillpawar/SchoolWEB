@@ -10,6 +10,7 @@ import {
 import styles from "./Experience.module.css";
 
 const Experience = () => {
+  const testimonialPdf = `${import.meta.env.BASE_URL}keystone-ankuram-testimonial.pdf`;
   const [titleRef, titleVisible] = useIntersectionObserver();
   const [contentRef, contentVisible] = useIntersectionObserver();
   const [videoRef, videoVisible] = useIntersectionObserver();
@@ -92,11 +93,24 @@ const Experience = () => {
                   <span>Hands-on Learning at Campus</span>
                 </div>
               </div>
+
+              <div className={styles.testimonialCta}>
+                <a
+                  className={styles.testimonialButton}
+                  href={testimonialPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFilePdf aria-hidden="true" />
+                  View Testimonials
+                </a>
+              </div>
             </div>
           </div>
 
           {/* ================= VIDEO ================= */}
           <div
+            id="collab-action"
             ref={videoRef}
             className={`${styles.videoSection} ${
               videoVisible ? styles.visible : ""
@@ -119,13 +133,13 @@ const Experience = () => {
 
           {/* ================= TESTIMONIAL CARD ================= */}
           <div
+            id="testimonials"
             ref={testimonialRef}
             className={`${styles.testimonialCard} ${
               testimonialVisible ? styles.visible : ""
             }`}
-          >
-            
-          </div>
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>

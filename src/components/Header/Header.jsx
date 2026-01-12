@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import styles from "./Header.module.css";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCollabOpen, setIsCollabOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +17,23 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsCollabOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
       setIsMobileMenuOpen(false);
+      setIsCollabOpen(false);
     }
   };
 
@@ -27,9 +41,11 @@ const Header = () => {
     { id: "programs", label: "Programs" },
     { id: "learning", label: "Curriculum" },
     { id: "project-kits", label: "Project Kits" },
-    { id: "Experience", label: "Collaboration" },
-    { id: "Enquire", label: "Partnerships" },
   ];
+
+  const handleCollabSelect = (sectionId) => {
+    scrollToSection(sectionId);
+  };
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
@@ -37,7 +53,7 @@ const Header = () => {
         {/* LOGO */}
         <div className={styles.logo} onClick={() => scrollToSection("home")}>
           <img
-            src="/logo.png"
+            src="/logo.jpeg"
             alt="TechieMindz Logo"
             className={styles.logoImage}
           />
@@ -65,6 +81,60 @@ const Header = () => {
               {link.label}
             </a>
           ))}
+
+          <div
+            className={styles.dropdown}
+            ref={dropdownRef}
+            onMouseEnter={() => setIsCollabOpen(true)}
+            onMouseLeave={() => setIsCollabOpen(false)}
+            onFocus={() => setIsCollabOpen(true)}
+            onBlur={() => setIsCollabOpen(false)}
+          >
+            <button
+              type="button"
+              className={`${styles.navLink} ${styles.dropdownTrigger}`}
+              aria-haspopup="true"
+              aria-expanded={isCollabOpen}
+              aria-controls="collab-menu"
+            >
+              Collaboration
+            </button>
+            <div
+              className={`${styles.dropdownMenu} ${
+                isCollabOpen ? styles.dropdownOpen : ""
+              }`}
+              id="collab-menu"
+              role="menu"
+            >
+              <button
+                type="button"
+                className={styles.dropdownItem}
+                onClick={() => handleCollabSelect("experience")}
+                role="menuitem"
+              >
+                Our Collaboration
+              </button>
+              <button
+                type="button"
+                className={styles.dropdownItem}
+                onClick={() => handleCollabSelect("collab-action")}
+                role="menuitem"
+              >
+                Our Collab in Action
+              </button>
+            </div>
+          </div>
+
+          <a
+            href="#partnerships"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("partnerships");
+            }}
+            className={styles.navLink}
+          >
+            Enquire
+          </a>
         </nav>
 
         {/* MOBILE MENU BUTTON */}
