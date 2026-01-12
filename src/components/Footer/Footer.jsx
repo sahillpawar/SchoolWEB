@@ -65,7 +65,7 @@ const Footer = () => {
                 +91 70306 25979
               </p>
               <p className={styles.location}>
-                Pune, Maharashtra 411060
+                Pune, Maharashtra
               </p>
             </div>
           </div>

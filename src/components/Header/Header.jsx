@@ -24,10 +24,10 @@ const Header = () => {
   }
 
   const navLinks = [
-    { id: 'programs', label: 'Camps & Classes' },
+    { id: 'programs', label: 'Programs' },
     { id: 'learning', label: 'Curriculum' },
     { id: 'project-kits', label: 'Project Kits' },
-    { id: 'partnerships', label: 'Partnerships' },
+    { id: 'partnerships', label: 'Collaboration' },
     { id: 'contact', label: 'Enquire' },
   ]
 

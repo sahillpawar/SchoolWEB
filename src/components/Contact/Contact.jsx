@@ -39,7 +39,7 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
       label: "Location",
-      value: "T-13/502, Raheja Vistas Premier, NIBM Annex, Pune-411060",
+      value: "Pune, Maharashtra",
       link: "#",
     },
   ];

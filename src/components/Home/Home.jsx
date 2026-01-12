@@ -8,8 +8,7 @@ const Home = () => {
       <div className="home-content">
         <h1>Ignite the Passion for Electronics in your child!</h1>
         <p>
-          Educating and Motivating Young Minds. 
-          Transforming Ideas into Intelligent Machines!
+          Educating and Motivating Young Minds 
         </p>
 
         <div className="home-buttons">
