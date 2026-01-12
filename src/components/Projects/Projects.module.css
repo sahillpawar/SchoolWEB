@@ -243,10 +243,13 @@
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  color: var(--accent-primary);
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #000000; /* BLACK TEXT */
+  font-weight: 500;
 }
+
+
 
 /* ===================== TABLET ===================== */
 
