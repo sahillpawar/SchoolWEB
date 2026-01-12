@@ -57,7 +57,7 @@ const Footer = () => {
           <div className={styles.contactSection}>
             <h4 className={styles.linksTitle}>Get in Touch</h4>
             <div className={styles.contactInfo}>
-              <a href="mailto:techiemindz20@gmail.com" className={styles.contactLink}>
+              <a href="mailto:techiemindz25@gmail.com" className={styles.contactLink}>
                 <FaEnvelope />
                 techiemindz20@gmail.com
               </a>
