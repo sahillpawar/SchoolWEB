@@ -22,7 +22,7 @@ const Experience = () => {
             titleVisible ? styles.visible : ""
           }`}
         >
-          Our <span className={styles.titleAccent}>Experience</span>
+          Our <span className={styles.titleAccent}>Collaboration</span>
         </h2>
 
         <div
