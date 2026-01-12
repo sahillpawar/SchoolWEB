@@ -59,7 +59,7 @@ const Footer = () => {
             <div className={styles.contactInfo}>
               <a href="mailto:techiemindz25@gmail.com" className={styles.contactLink}>
                 <FaEnvelope />
-                techiemindz20@gmail.com
+                techiemindz25@gmail.com
               </a>
               <p className={styles.location}>
                 +91 70306 25979
