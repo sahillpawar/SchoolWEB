@@ -110,7 +110,7 @@ const Experience = () => {
             <div className={styles.videoContainer}>
               <video
                 className={styles.video}
-                src={`${import.meta.env.BASE_URL}video1.mp4`}
+                src={`${import.meta.env.BASE_URL}video2.mp4`}
                 controls
                 muted
               />
