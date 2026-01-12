@@ -13,7 +13,7 @@ const Experience = () => {
   const [titleRef, titleVisible] = useIntersectionObserver();
   const [contentRef, contentVisible] = useIntersectionObserver();
   const [videoRef, videoVisible] = useIntersectionObserver();
-  const [pdfRef, pdfVisible] = useIntersectionObserver();
+  const [testimonialRef, testimonialVisible] = useIntersectionObserver();
 
   return (
     <section id="experience" className={styles.experience}>
@@ -33,14 +33,13 @@ const Experience = () => {
             contentVisible ? styles.visible : ""
           }`}
         >
-          {/* ================= CARD ================= */}
+          {/* ================= COLLAB CARD ================= */}
           <div className={styles.experienceCard}>
             <div className={styles.imageContainer}>
               <img
                 src={`${import.meta.env.BASE_URL}Image1.jpeg`}
                 alt="The Keystone Ankuram School Collaboration"
                 className={styles.experienceImage}
-                loading="lazy"
               />
             </div>
 
@@ -74,15 +73,9 @@ const Experience = () => {
               </div>
 
               <p className={styles.description}>
-                Since 2024, TechieMindz has been proud to partner with The
-                Keystone Ankuram School, bringing innovative technology
-                education to students from 2nd to 8th standard.
-              </p>
-
-              <p className={styles.description}>
-                Our programs focus on hands-on learning, critical thinking,
-                creativity, and problem-solving through electronics,
-                robotics, and programming.
+                Our collaboration focuses on hands-on learning, innovation,
+                creativity, and practical exposure to electronics, robotics,
+                and programming.
               </p>
 
               <div className={styles.highlights}>
@@ -120,39 +113,37 @@ const Experience = () => {
                 src={`${import.meta.env.BASE_URL}video1.mp4`}
                 controls
                 muted
-                playsInline
               />
             </div>
           </div>
 
-          {/* ================= PDF SECTION ================= */}
+          {/* ================= TESTIMONIAL CARD ================= */}
           <div
-            ref={pdfRef}
-            className={`${styles.pdfSection} ${
-              pdfVisible ? styles.visible : ""
+            ref={testimonialRef}
+            className={`${styles.testimonialCard} ${
+              testimonialVisible ? styles.visible : ""
             }`}
           >
-            <h3 className={styles.pdfTitle}>
-              <FaFilePdf className={styles.pdfIcon} />
-              Keystone Ankuram Testimonial
-            </h3>
+            <div className={styles.testimonialContent}>
+              <h3 className={styles.testimonialTitle}>
+                <FaFilePdf className={styles.testimonialIcon} />
+                Keystone Ankuram Testimonial
+              </h3>
 
-            <div className={styles.pdfContainer}>
-              <iframe
-                src={`${import.meta.env.BASE_URL}keystone-ankuram-testimonial.pdf`}
-                title="Keystone Ankuram Testimonial PDF"
-                className={styles.pdfFrame}
-              />
+              <p className={styles.testimonialText}>
+                Official testimonial document from The Keystone Ankuram School
+                highlighting the success and impact of our collaboration.
+              </p>
+
+              <a
+                href={`${import.meta.env.BASE_URL}keystone-ankuram-testimonial.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.testimonialButton}
+              >
+                View Testimonial Document
+              </a>
             </div>
-
-            <a
-              href={`${import.meta.env.BASE_URL}keystone-ankuram-testimonial.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.pdfDownload}
-            >
-              Download Testimonial PDF
-            </a>
           </div>
         </div>
       </div>
