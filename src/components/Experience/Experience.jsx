@@ -5,6 +5,7 @@ import {
   FaMapMarkerAlt,
   FaUsers,
   FaPlay,
+  FaFilePdf,
 } from "react-icons/fa";
 import styles from "./Experience.module.css";
 
@@ -12,6 +13,7 @@ const Experience = () => {
   const [titleRef, titleVisible] = useIntersectionObserver();
   const [contentRef, contentVisible] = useIntersectionObserver();
   const [videoRef, videoVisible] = useIntersectionObserver();
+  const [pdfRef, pdfVisible] = useIntersectionObserver();
 
   return (
     <section id="experience" className={styles.experience}>
@@ -31,9 +33,9 @@ const Experience = () => {
             contentVisible ? styles.visible : ""
           }`}
         >
+          {/* ================= CARD ================= */}
           <div className={styles.experienceCard}>
             <div className={styles.imageContainer}>
-              {/* Image from public folder - use base URL for GitHub Pages compatibility */}
               <img
                 src={`${import.meta.env.BASE_URL}Image1.jpeg`}
                 alt="The Keystone Ankuram School Collaboration"
@@ -61,6 +63,7 @@ const Experience = () => {
                     <p>Keystone Campus, Near Handewadi Chowk, Pune – 412308</p>
                   </div>
                 </div>
+
                 <div className={styles.infoItem}>
                   <FaUsers className={styles.infoIcon} />
                   <div>
@@ -73,20 +76,13 @@ const Experience = () => {
               <p className={styles.description}>
                 Since 2024, TechieMindz has been proud to partner with The
                 Keystone Ankuram School, bringing innovative technology
-                education to students from 2nd to 8th standard. Our
-                collaboration focuses on creating meaningful, hands-on learning
-                experiences that inspire young minds to explore the fascinating
-                world of electronics, robotics, and programming.
+                education to students from 2nd to 8th standard.
               </p>
 
               <p className={styles.description}>
-                Through our structured curriculum programs at Keystone Campus,
-                we have successfully integrated practical learning experiences
-                into the school's educational framework. Our programs help
-                students develop critical thinking skills, creativity,
-                problem-solving abilities, and a genuine passion for technology.
-                The partnership reflects our shared commitment to excellence and
-                innovation in education.
+                Our programs focus on hands-on learning, critical thinking,
+                creativity, and problem-solving through electronics,
+                robotics, and programming.
               </p>
 
               <div className={styles.highlights}>
@@ -96,16 +92,17 @@ const Experience = () => {
                 </div>
                 <div className={styles.highlightItem}>
                   <div className={styles.highlightIcon}>✓</div>
-                  <span>Integrated Curriculum for 2nd to 8th Standard</span>
+                  <span>Integrated Curriculum (2nd–8th)</span>
                 </div>
                 <div className={styles.highlightItem}>
                   <div className={styles.highlightIcon}>✓</div>
-                  <span>Hands-on Learning at Keystone Campus</span>
+                  <span>Hands-on Learning at Campus</span>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* ================= VIDEO ================= */}
           <div
             ref={videoRef}
             className={`${styles.videoSection} ${
@@ -118,7 +115,6 @@ const Experience = () => {
             </h3>
 
             <div className={styles.videoContainer}>
-              {/* Video from public folder - use base URL for GitHub Pages compatibility */}
               <video
                 className={styles.video}
                 src={`${import.meta.env.BASE_URL}video1.mp4`}
@@ -127,6 +123,36 @@ const Experience = () => {
                 playsInline
               />
             </div>
+          </div>
+
+          {/* ================= PDF SECTION ================= */}
+          <div
+            ref={pdfRef}
+            className={`${styles.pdfSection} ${
+              pdfVisible ? styles.visible : ""
+            }`}
+          >
+            <h3 className={styles.pdfTitle}>
+              <FaFilePdf className={styles.pdfIcon} />
+              Keystone Ankuram Testimonial
+            </h3>
+
+            <div className={styles.pdfContainer}>
+              <iframe
+                src={`${import.meta.env.BASE_URL}keystone-ankuram-testimonial.pdf`}
+                title="Keystone Ankuram Testimonial PDF"
+                className={styles.pdfFrame}
+              />
+            </div>
+
+            <a
+              href={`${import.meta.env.BASE_URL}keystone-ankuram-testimonial.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.pdfDownload}
+            >
+              Download Testimonial PDF
+            </a>
           </div>
         </div>
       </div>
