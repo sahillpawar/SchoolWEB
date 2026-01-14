@@ -14,7 +14,6 @@ const Experience = () => {
   const [titleRef, titleVisible] = useIntersectionObserver();
   const [contentRef, contentVisible] = useIntersectionObserver();
   const [videoRef, videoVisible] = useIntersectionObserver();
-  const [testimonialRef, testimonialVisible] = useIntersectionObserver();
 
   return (
     <section id="experience" className={styles.experience}>
@@ -130,16 +129,6 @@ const Experience = () => {
               />
             </div>
           </div>
-
-          {/* ================= TESTIMONIAL CARD ================= */}
-          <div
-            id="testimonials"
-            ref={testimonialRef}
-            className={`${styles.testimonialCard} ${
-              testimonialVisible ? styles.visible : ""
-            }`}
-            aria-hidden="true"
-          />
         </div>
       </div>
     </section>

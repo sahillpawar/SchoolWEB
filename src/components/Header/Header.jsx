@@ -24,9 +24,18 @@ const Header = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    if (isCollabOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isCollabOpen]);
+
+  // Close dropdown when mobile menu closes
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      setIsCollabOpen(false);
+    }
+  }, [isMobileMenuOpen]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -116,14 +125,6 @@ const Header = () => {
                 role="menuitem"
               >
                 Our Collab in Action
-              </button>
-              <button
-                type="button"
-                className={styles.dropdownItem}
-                onClick={() => handleCollabSelect("testimonials")}
-                role="menuitem"
-              >
-                Testimonials
               </button>
             </div>
           </div>

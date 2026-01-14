@@ -17,7 +17,7 @@ const Partnerships = () => {
     {
       id: 2,
       title: 'For Parents Who Care',
-      description: 'Invest in your child\'s future — logic, critical thinking & valuable technology skills in a fun environment.',
+      description: 'Invest in your child\'s future — logical and critical thinking & valuable technology skills in a fun environment.',
       icon: <FaUsers />,
       color: '#ffeb3b'
     },

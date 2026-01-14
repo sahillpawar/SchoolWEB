@@ -241,11 +241,21 @@
     width: 100%;
     box-shadow: none;
     border: none;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
     background: transparent;
     padding: 0;
+    transition: opacity var(--transition-normal), transform var(--transition-normal), max-height var(--transition-normal);
+  }
+
+  .dropdownMenu.dropdownOpen {
+    opacity: 1;
+    max-height: 200px;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .dropdownItem {
